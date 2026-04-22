@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# 任务产物（按需启用，默认保留以便你追踪历史）
+# output/

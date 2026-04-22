@@ -1,0 +1,190 @@
+# 渠道矩阵（团队共识）
+# Agent 在【确认点 A】按 region/language/goal/content_type 过滤出候选，给用户挑 Top 3；
+# 之后再请用户在 Top 3 内指定 1 个首发、其余为次发。
+# 追加条目前先与用户对齐，不要擅自修改。
+#
+# 重要：本矩阵只列"分发平台"。`landing_page` 是页面/文档类型（证据链主承载），不是平台，
+# 所以不在本矩阵候选里——它由 SKILL.md 无条件必产，不参与 Top 3 选择。
+#
+# 字段：
+# - name:     中文/英文展示名
+# - slug:     **落盘文件名**（不含 .md）。Step 3 生成 `output/<task>/deliverables/content/<slug>.md`。
+#             slug 与 rule_key 不同：slug 对应"哪个平台"，rule_key 对应"用哪套硬规则"。
+#             verify.py 先查 stem 是否直接命中 rule（默认场景），否则按本表 slug→rule_key 映射找规则。
+# - rule_key: 该平台用哪套 platform_rules.yaml 段的硬规则
+#   - 字符串：该平台有对应骨架 + 硬规则，Step 3 直接去 templates/platforms/<rule_key>.md 取骨架
+#   - null：该平台**暂无骨架/硬规则**。Agent 在确认点 A 若用户选到这类平台，必须停下来
+#          与用户确认：降级用最接近的平台骨架改写（在 notes 里给了 fallback 建议），
+#          或本轮先跳过该平台。**不得**在没有骨架的情况下硬写内容。
+#   - 新增平台骨架后，回来把 null 改成对应 rule_key。
+
+version: 5
+
+defaults:
+  CN_zh:
+    - 独立站博客
+    - 微信公众号
+    - 知乎
+    - 小红书
+    - B站
+    - 抖音
+    - 掘金
+  GLOBAL_en:
+    - Own Blog
+    - LinkedIn
+    - Medium
+    - Substack
+    - Reddit
+    - Quora
+    - YouTube
+
+platforms:
+  - name: 独立站博客
+    slug: own_blog
+    rule_key: own_blog
+    regions: [CN, GLOBAL]
+    languages: [zh, en]
+    goals: [brand, lead, seo]
+    content_types: [howto, comparison, case_study, report, faq, industry_insight]
+    industries: [B2B, SaaS, 消费, 外贸, 工业, 教育, AI, 咨询]
+    notes: SEO 主阵地，完全可控。承担主题集群、内链网络、权威引用落点；相对 landing_page 更偏长文/案例/行业观察，相对平台账号能直接拿流量与线索
+
+  - name: 知乎
+    slug: zhihu
+    rule_key: zhihu
+    regions: [CN]
+    languages: [zh]
+    goals: [brand, lead]
+    content_types: [howto, comparison, case_study, report, faq]
+    industries: [SaaS, B2B, 内容营销, 营销, 教育, 职场, AI]
+    notes: 问答/长文适配强，利于沉淀可被 AI 引用的段落与讨论
+
+  - name: 微信公众号
+    slug: wechat
+    rule_key: wechat
+    regions: [CN]
+    languages: [zh]
+    goals: [brand, lead]
+    content_types: [case_study, report]
+    industries: [SaaS, B2B, 内容营销, 品牌, 教育, 咨询]
+    notes: 私域沉淀强，适合系列化与转化路径承接
+
+  - name: 小红书
+    slug: xiaohongshu
+    rule_key: xiaohongshu
+    regions: [CN]
+    languages: [zh]
+    goals: [brand]
+    content_types: [howto, comparison, faq]
+    industries: [消费, 教育, 职场, 工具, AI]
+    notes: 清单化与场景化表达，重标题与封面图
+
+  - name: B站
+    slug: bilibili
+    rule_key: short_video
+    regions: [CN]
+    languages: [zh]
+    goals: [brand, lead]
+    content_types: [howto, report, case_study, short_video]
+    industries: [教育, 工具, AI, 互联网]
+    notes: 用 `short_video` 骨架产出口播脚本 + 分镜表，真正的视频剪辑不在 skill 产出范围。**slug 独立为 bilibili** 以便同任务内与抖音并存
+
+  - name: 抖音
+    slug: douyin
+    rule_key: short_video
+    regions: [CN]
+    languages: [zh]
+    goals: [brand]
+    content_types: [short_video, howto]
+    industries: [消费, 教育, 工具, AI]
+    notes: 同 B 站，共用 `short_video` 骨架；高曝光但难承接线索，需配合私域转化路径
+
+  - name: 掘金
+    slug: juejin
+    rule_key: own_blog
+    regions: [CN]
+    languages: [zh]
+    goals: [brand, lead]
+    content_types: [howto]
+    industries: [开发者, AI, SaaS]
+    notes: 技术向内容容易获得认可与收藏。**fallback**：沿用 `own_blog` 骨架，tone 调整为开发者口吻；若后续单独建 `juejin.md` 骨架，回来把 rule_key 改到 `juejin` 即可
+
+  - name: LinkedIn
+    slug: linkedin
+    rule_key: linkedin
+    regions: [GLOBAL]
+    languages: [en]
+    goals: [brand, lead]
+    content_types: [case_study, report]
+    industries: [B2B, SaaS, 咨询, 营销, AI]
+    notes: B2B 分发核心阵地，观点+数据+案例
+
+  - name: Medium
+    slug: medium
+    rule_key: medium
+    regions: [GLOBAL]
+    languages: [en]
+    goals: [brand]
+    content_types: [howto, report]
+    industries: [AI, SaaS, marketing]
+    notes: 长文友好，适合沉淀体系化内容
+
+  - name: Twitter/X
+    slug: twitter
+    rule_key: twitter_thread
+    regions: [GLOBAL]
+    languages: [en]
+    goals: [brand]
+    content_types: [thread, insight]
+    industries: [AI, SaaS, 营销, 咨询]
+    notes: 短线程，利于转发与沉淀观点；`platform_rules.yaml#twitter_thread` 直接对应。**slug 独立为 twitter**（文件名更自然，规则仍走 twitter_thread）
+
+  - name: Substack
+    slug: substack
+    rule_key: medium
+    regions: [GLOBAL]
+    languages: [en]
+    goals: [brand]
+    content_types: [howto, report, case_study]
+    industries: [AI, SaaS, marketing, 咨询]
+    notes: '**fallback**：沿用 `medium` 骨架（分析长文原型），补一段 email newsletter 开场白即可；若单独建 `substack.md` 骨架，回来把 rule_key 改到 `substack`'
+
+  - name: Reddit
+    slug: reddit
+    rule_key: null
+    regions: [GLOBAL]
+    languages: [en]
+    goals: [brand]
+    content_types: [howto, comparison, case_study]
+    industries: [AI, SaaS, 开发者]
+    notes: 社区讨论强，适合真实经验分享，避免硬广。**暂无骨架**：社区帖格式高度依赖子版规，建议用户选中后停下来共写一版初稿，而不是套模板
+
+  - name: Quora
+    slug: quora
+    rule_key: zhihu
+    regions: [GLOBAL]
+    languages: [en]
+    goals: [brand]
+    content_types: [howto, comparison, faq]
+    industries: [AI, SaaS, 教育, 咨询]
+    notes: '**fallback**：沿用 `zhihu` 骨架（问答/专家拆解原型），把"先给结论"用英文写；若后续单独建 `quora.md` 骨架，回来把 rule_key 改到 `quora`'
+
+  - name: Product Hunt
+    slug: product_hunt
+    rule_key: null
+    regions: [GLOBAL]
+    languages: [en]
+    goals: [lead]
+    content_types: [case_study, faq]
+    industries: [SaaS, 工具, AI]
+    notes: 产品发布与曝光。**暂无骨架**：Launch 文案结构特殊（Maker Comment + Tagline + First Comment），建议用户选中后停下来共写
+
+  - name: YouTube
+    slug: youtube
+    rule_key: short_video
+    regions: [GLOBAL]
+    languages: [en]
+    goals: [brand, lead]
+    content_types: [short_video, howto, case_study]
+    industries: [AI, SaaS, 教育, 消费]
+    notes: 与 B 站/抖音共用 `short_video` 骨架出口播脚本；长尾视频引流强，脚本化生产可规模
