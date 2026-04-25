@@ -1,0 +1,190 @@
+version: 1
+
+description: >
+  seo-geo-content 的最小质量评估基线。先用这个 rubric 判断“够不够好”，
+  再用 verify 判断“有没有踩线”。
+
+global_dimensions:
+  - id: goal_fit
+    question: 这篇内容是否服务本次唯一主目标？
+  - id: evidence_strength
+    question: 关键结论是否有足够证据支撑？
+  - id: platform_fit
+    question: 这篇内容是否像该平台原生内容，而不是换壳稿？
+  - id: actionability
+    question: 看完后是否知道下一步做什么？
+
+platform_dimensions:
+  landing_page:
+    must_win:
+      - 首屏 10 秒内能说清价值
+      - 证据链与 CTA 明确
+    failure_modes:
+      - 开头像文章前言
+      - 不知道怎么转化
+  own_blog:
+    must_win:
+      - 有观点
+      - 能自然引回核心资产
+    failure_modes:
+      - 与 landing_page 重复
+      - 没有作者判断
+  xiaohongshu:
+    must_win:
+      - 首句有抓力
+      - 有可收藏的点
+    failure_modes:
+      - 机构口吻
+      - 没有场景感
+  zhihu:
+    must_win:
+      - 先给结论
+      - 每个结论都有证据
+    failure_modes:
+      - 结论后置
+      - 断言无出处
+  quora:
+    must_win:
+      - 开头直接回答
+      - 解释清楚且低促销
+    failure_modes:
+      - 先推品牌
+      - 答案太空
+  wechat:
+    must_win:
+      - 开头有钩子
+      - 收尾行动明确
+    failure_modes:
+      - 开头太平
+      - 没有私域承接
+  wechat_video:
+    must_win:
+      - 前几秒先给结果
+      - 私域动作自然
+    failure_modes:
+      - 太像抖音公域脚本
+      - CTA 生硬
+  douyin:
+    must_win:
+      - 前 2 秒就能抓住人
+      - 节奏快且每段都在推进
+    failure_modes:
+      - 铺垫太长
+      - 像通用短视频模板
+  bilibili:
+    must_win:
+      - 解释比短视频更完整
+      - 节奏稳且有信息量
+    failure_modes:
+      - 太像切片
+      - 只有结论没有展开
+  linkedin:
+    must_win:
+      - 反共识或有判断
+      - 数据和 mini-case 到位
+    failure_modes:
+      - 泛泛行业鸡汤
+      - 像新闻稿
+  medium:
+    must_win:
+      - 有 thesis 或框架
+      - 每节都有证据推进
+    failure_modes:
+      - 纯 listicle
+      - 没有 thesis
+  substack:
+    must_win:
+      - 人味和观点都更强
+      - 结尾值得订阅
+    failure_modes:
+      - 太像普通博客
+      - 没有 newsletter 承接
+  csdn:
+    must_win:
+      - 先给解法
+      - 有步骤和坑点
+    failure_modes:
+      - 像品牌博客
+      - 没有实操
+  cnblogs:
+    must_win:
+      - 有工程师自己的判断
+      - 过程、取舍、坑点都说清楚
+    failure_modes:
+      - 像品牌长文
+      - 只有答案没有过程
+  baijiahao:
+    must_win:
+      - 标题和首段直接答题
+      - 结构清楚且适合搜索分发
+    failure_modes:
+      - 首段不直答
+      - 像普通站内博客
+  toutiao:
+    must_win:
+      - 开头有结论或反差
+      - 现象、案例、建议推进顺畅
+    failure_modes:
+      - 空观点
+      - 小标题重复推进无效
+  juejin:
+    must_win:
+      - 先给解法
+      - 有步骤、代码或命令
+    failure_modes:
+      - 像产品软文
+      - 没有可执行细节
+  devto:
+    must_win:
+      - 首屏就有帮助
+      - 有代码或命令
+    failure_modes:
+      - 太像产品介绍
+      - 没有 hands-on 内容
+  hackernoon:
+    must_win:
+      - 标题和角度更锋利
+      - 结尾有判断
+    failure_modes:
+      - 太像普通教程
+      - 没有媒体感
+  twitter_thread:
+    must_win:
+      - 每条都是独立 punchline
+      - 第一条最强
+    failure_modes:
+      - 像长文切条
+      - 连续重复
+  twitter:
+    must_win:
+      - 第一条有明确判断
+      - 中间每条都能独立转发
+    failure_modes:
+      - 首条太弱
+      - 重复同一观点
+  tiktok:
+    must_win:
+      - 前 1-2 秒停滑
+      - 画面和节奏都更像平台原生内容
+    failure_modes:
+      - 像通用广告片
+      - 开头太慢
+  youtube:
+    must_win:
+      - 开头 promise 清楚
+      - 中段有完整展开
+    failure_modes:
+      - 假 hype
+      - 中段重复结论不推进
+  short_video:
+    must_win:
+      - 前 3 秒够抓人
+      - 口播、画面、字幕一致
+    failure_modes:
+      - 超长铺垫
+      - 只有台词没有画面感
+
+self_review_loop:
+  - 先看 4 个全局问题
+  - 再看平台的 must_win 和 failure_modes
+  - 命中任一 failure_mode 就重写对应部分
