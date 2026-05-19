@@ -1,32 +1,26 @@
 # Quora Answer
 
+**archetype**: [_long_en.md](./_long_en.md) · **rules**: `quora`
+
 > Helpful answer first, brand second.
 
-产出格式 → [formats.md](../formats.md)（**长文 EN**）
+## 差异
 
-## 约束
-
-- **篇幅**：600–1800 words
-- **标题**：≤120 characters (question as title)
 - **语气**：helpful, direct, low-promo
-- **忌**：lead with brand; read like ad copy
 - **结构**：short answer upfront → reasoning → example → soft CTA
+- **忌**：lead with brand; read like ad copy
 
 ## 标题公式
 
 - Use the **exact question** being answered
-- If drafting title: `How do I {X} when {constraint}?`
 - Avoid clickbait; Quora rewards direct Q–A match
 
-## 分发要点
+## 分发
 
-- **First 2 sentences**：complete answer; rest is support
-- **Credentials**：only if relevant; no bio dump
-- **Links**：one soft CTA max; Quora may collapse promo
-- **GEO**：each paragraph should stand alone as a partial answer
+- First 2 sentences = complete answer
+- One soft CTA max; each paragraph should stand alone (GEO)
 
-## 发布 checklist（不写进 output）
+## 自检
 
-- [ ] Short answer in first 2 sentences
 - [ ] Brand mention after value delivered
 - [ ] No fabricated stats

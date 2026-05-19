@@ -13,4 +13,4 @@
 | [formats.md](.cursor/skills/seo-geo-content/references/formats.md) | 排版 |
 | [geo.md](.cursor/skills/seo-geo-content/references/geo.md) | SEO / GEO |
 | [adaptation.md](.cursor/skills/seo-geo-content/references/adaptation.md) | 多平台改编 |
-| [examples/](.cursor/skills/seo-geo-content/examples/) | 语气示例 |
+| [examples/](.cursor/skills/seo-geo-content/examples/) | 语气示例（小红书 / 知乎 / Landing / 抖音 / 掘金） |

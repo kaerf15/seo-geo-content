@@ -1,18 +1,14 @@
 # Landing Page
 
+**archetype**: [_geo.md](./_geo.md) · **rules**: `landing_page` · **example**: [landing_page-good.md](../../examples/landing_page-good.md)
+
 > 承接页，不是博客文章。多平台 canonical 首选此形态。
 
-产出格式 → [formats.md](../formats.md)（**站内**）· GEO → [geo.md](../geo.md)
+## 差异
 
-## 约束
-
-- **篇幅**：1200–3500 字
-- **标题**：≤60 字
-- **首段直答**：40–80 字
-- **FAQ**：3–8 条，单条 30–120 字
 - **语气**：direct, evidence-first
-- **忌**：夸大承诺；像博客前言；无行动入口
-- **结构**：首段直答 → 价值/证据 `##` → FAQ → CTA → 发布元数据
+- **结构**：首段直答 → 价值/证据 `##` → `## 常见问题` → CTA 小节
+- **忌**：夸大承诺；像博客前言；无行动入口；发布元数据块
 
 ## 标题公式
 
@@ -20,17 +16,14 @@
 - `{主查询} — {一句话定义}`
 - `{对比/选型}：{N} criteria that actually matter`
 
-## 分发要点
+## 分发
 
-- **首屏**：直答 + 主 CTA  above the fold（正文里前 120 字体现）
-- **FAQ**：来自真实销售/客服问题；每条可独立摘引
-- **Social proof**：仅写事实依据允许的 logo/数字/案例
-- **Meta**：description ≤160 字；canonical 不编造（见 formats.md）
-- **Schema**：WebPage + FAQPage 字段在发布元数据块列出
+- 首屏直答 + 主 CTA（正文前 120 字体现）
+- Social proof 仅写事实依据允许的内容
+- SEO 字段（meta、schema、canonical）在发布后台填写，不写进 output
 
-## 发布 checklist（不写进 output）
+## 自检
 
-- [ ] 首段 40–80 字
-- [ ] FAQ 3–8 条
-- [ ] 发布元数据块完整
+- [ ] 仅含可发布正文，无元数据块
 - [ ] 主 CTA 唯一且明确
+- [ ] FAQ ≥3 条，问句完整、可单独摘引

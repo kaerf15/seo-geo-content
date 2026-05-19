@@ -1,16 +1,14 @@
 # Medium Article
 
+**archetype**: [_long_en.md](./_long_en.md) · **rules**: `medium`
+
 > Analytical essay, not a stitched listicle.
 
-产出格式 → [formats.md](../formats.md)（**长文 EN**）
+## 差异
 
-## 约束
-
-- **篇幅**：1000–2500 words
-- **标题**：≤70 characters
 - **语气**：analytical, readable
-- **忌**：pure listicle; no thesis; marketing fluff
 - **结构**：subtitle/lede → TL;DR → `##` sections → framework or checklist CTA
+- **忌**：pure listicle; no thesis; marketing fluff
 
 ## 标题公式
 
@@ -18,15 +16,12 @@
 - `{Thesis}: what we learned after {N} {units}`
 - `A practical framework for {problem} (without {hype})`
 
-## 分发要点
+## 分发
 
-- **Subtitle**：one sentence thesis under the title
-- **TL;DR**：3 bullets max, scannable
-- **Publications**：match pub tone; avoid hard sell in body
-- **SEO**：primary query in title or first paragraph
+- Subtitle = one sentence thesis
+- TL;DR 3 bullets max
 
-## 发布 checklist（不写进 output）
+## 自检
 
-- [ ] Title ≤70 chars; clear thesis in first 100 words
+- [ ] Clear thesis in first 100 words
 - [ ] TL;DR or lede present
-- [ ] Tags 3–5 (platform-side, not in output file unless user asks)

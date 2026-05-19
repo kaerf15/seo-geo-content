@@ -1,0 +1,160 @@
+{
+  "_comment": "数值约束唯一真源；语气/换壳等见 references/platforms/{platform}.md 自检",
+  "platforms": {
+    "xiaohongshu": {
+      "lang": "zh",
+      "title_max": 20,
+      "body_min": 300,
+      "body_max": 800,
+      "tags_min": 5,
+      "tags_max": 10
+    },
+    "zhihu": {
+      "lang": "zh",
+      "title_max": 40,
+      "body_min": 1200,
+      "body_max": 3000
+    },
+    "wechat": {
+      "lang": "zh",
+      "title_max": 30,
+      "body_min": 1000,
+      "body_max": 3000,
+      "requires_sections": ["行动清单"]
+    },
+    "baijiahao": {
+      "lang": "zh",
+      "title_max": 40,
+      "body_min": 800,
+      "body_max": 2200,
+      "lead_min": 40,
+      "lead_max": 80,
+      "faq_min": 3,
+      "faq_max": 8,
+      "requires_sections": ["常见问题"]
+    },
+    "toutiao": {
+      "lang": "zh",
+      "title_max": 35,
+      "body_min": 800,
+      "body_max": 2000
+    },
+    "landing_page": {
+      "lang": "zh",
+      "title_max": 60,
+      "body_min": 1200,
+      "body_max": 3500,
+      "lead_min": 40,
+      "lead_max": 80,
+      "faq_min": 3,
+      "faq_max": 8,
+      "requires_sections": ["常见问题"]
+    },
+    "own_blog": {
+      "lang": "zh",
+      "title_max": 60,
+      "body_min": 1000,
+      "body_max": 3000,
+      "lead_min": 40,
+      "lead_max": 80
+    },
+    "juejin": {
+      "lang": "zh",
+      "title_max": 80,
+      "body_min": 1000,
+      "body_max": 2400,
+      "requires_sections": ["先给结论", "坑点"],
+      "requires_code_block": true
+    },
+    "csdn": {
+      "lang": "zh",
+      "title_max": 70,
+      "body_min": 1000,
+      "body_max": 2500,
+      "requires_sections": ["先给结论", "坑点"],
+      "requires_code_block": true
+    },
+    "cnblogs": {
+      "lang": "zh",
+      "title_max": 80,
+      "body_min": 1000,
+      "body_max": 2500,
+      "requires_sections": ["先给结论", "坑点"],
+      "requires_code_block": true
+    },
+    "douyin": {
+      "lang": "zh",
+      "requires_sections": ["口播", "分镜表"],
+      "duration_min_sec": 15,
+      "duration_max_sec": 60
+    },
+    "tiktok": {
+      "lang": "zh",
+      "requires_sections": ["口播", "分镜表"],
+      "duration_min_sec": 15,
+      "duration_max_sec": 60
+    },
+    "wechat_video": {
+      "lang": "zh",
+      "requires_sections": ["口播", "分镜表"],
+      "duration_min_sec": 30,
+      "duration_max_sec": 60
+    },
+    "bilibili": {
+      "lang": "zh",
+      "requires_sections": ["口播", "分镜表"],
+      "duration_min_sec": 60,
+      "duration_max_sec": 300
+    },
+    "youtube": {
+      "lang": "en",
+      "requires_sections": ["口播", "分镜表"],
+      "duration_min_sec": 120,
+      "duration_max_sec": 900
+    },
+    "twitter": {
+      "lang": "zh",
+      "thread_min": 5,
+      "thread_max": 12,
+      "tweet_max": 280
+    },
+    "medium": {
+      "lang": "en",
+      "title_max": 70,
+      "body_min": 1000,
+      "body_max": 2500
+    },
+    "substack": {
+      "lang": "en",
+      "title_max": 80,
+      "body_min": 1000,
+      "body_max": 2500
+    },
+    "hackernoon": {
+      "lang": "en",
+      "title_max": 80,
+      "body_min": 1000,
+      "body_max": 2400
+    },
+    "linkedin": {
+      "lang": "en",
+      "title_max": 70,
+      "body_min": 300,
+      "body_max": 1200
+    },
+    "quora": {
+      "lang": "en",
+      "title_max": 120,
+      "body_min": 600,
+      "body_max": 1800
+    },
+    "devto": {
+      "lang": "en",
+      "title_max": 80,
+      "body_min": 800,
+      "body_max": 2200,
+      "requires_sections": ["Conclusion", "Gotchas"],
+      "requires_code_block": true
+    }
+  }
+}
